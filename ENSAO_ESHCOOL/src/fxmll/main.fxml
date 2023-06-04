@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.TableColumn?>
+
+<AnchorPane id="AnchorPane" prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <VBox id="VBox" spacing="10" alignment="TOP_CENTER" padding="20">
+            <Label text="Student Registration" id="TitleLabel" fx:id="titleLabel" />
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="First Name:" id="Label" />
+                <TextField fx:id="firstnameInput" />
+                <Label text="Last Name:" id="Label" />
+                <TextField fx:id="lastnameInput" />
+                <Label text="Email:" id="Label" />
+                <TextField fx:id="emailInput" />
+                <Label text="Level:" id="Label" />
+                <TextField fx:id="levelInput" />
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add" id="addButton" onAction="#addButtonClicked" />
+                <Button text="Delete" id="deleteButton" onAction="#deleteButtonClicked" />
+                <Button text="Update" id="updateButton" onAction="#updateButtonClicked" />
+                <Button text="View" id="viewButton" onAction="#viewButtonClicked" />
+            </HBox>
+            <TableView fx:id="table" id="table-view" prefHeight="200">
+                <columns>
+                    <TableColumn text="First Name" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="firstname" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Last Name" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="lastname" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Email" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="email" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Level" prefWidth="50">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="level" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <fx:define>
+        <Font fx:id="titleFont" name="Arial" size="24" />
+    </fx:define>
+    <fx:style>
+        #titleLabel {
+            -fx-font-weight: bold;
+            -fx-font-size: 24px;
+            -fx-font-family: "Arial";
+        }
+        #Label {
+            -fx-font-size: 16px;
+            -fx-font-family: "Arial";
+        }
+        #addButton, #deleteButton, #updateButton, #viewButton {
+            -fx-font-size: 16px;
+            -fx-font-family: "Arial";
+        }
+    </fx:style>
+</AnchorPane>
